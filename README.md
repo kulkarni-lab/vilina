@@ -1,11 +1,12 @@
-# Vilina (विलीन). endogenous viral element discovery and characterisation
-
-*Vilīna*, Sanskrit for "dissolved" or "merged within" — the genome's memory of ancient
-infections, long since absorbed into its sequence.
+# Vilīna (विलीन) 
 
 Finds endogenous viral elements (EVEs) in a genome assembly, annotates them, scores how
 complete each one is, judges whether it could still be functional, and draws the summary
 figures. Runs as a Snakemake workflow or as a single Python command.
+
+*Vilīna*, Sanskrit for "dissolved" or "merged within" — the genome's memory of ancient
+infections, long since absorbed into its sequence.
+
 
 ## Inputs
 

@@ -4,7 +4,7 @@ Finds endogenous viral elements (EVEs) in a genome assembly, annotates them, sco
 complete each one is, judges whether it could still be functional, and draws the summary
 figures. Runs as a Snakemake workflow or as a single Python command.
 
-*Vilīna*, Sanskrit for "dissolved" or "merged within" — the genome's memory of ancient
+*Vilīna*, Sanskrit for "dissolved" or "merged within": the genome's memory of ancient
 infections, long since absorbed into its sequence.
 
 

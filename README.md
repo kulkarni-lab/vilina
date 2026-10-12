@@ -1,4 +1,4 @@
-# Vilina (विलीन) — endogenous viral element discovery and characterisation
+# Vilina (विलीन). endogenous viral element discovery and characterisation
 
 *Vilīna*, Sanskrit for "dissolved" or "merged within" — the genome's memory of ancient
 infections, long since absorbed into its sequence.

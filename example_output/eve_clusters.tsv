@@ -1,0 +1,9 @@
+cluster	contig	start	end	span_bp	family	dominant_virus	n_eves	distinct_viral_proteins	virus_proteins_in_db	virus_proteins_hit	proteome_aa_covered	proteome_aa_total	genome_completeness	eves	genome_completeness_class
+CL0001	chr1	200001	204107	4107	Bornaviridae	Borna-like virus A	2	1	4	1	370	2770	0.134	EVE00001,EVE00002	fragmentary
+CL0002	chr1	900001	905098	5098	Bornaviridae	Borna-like virus A	1	1	4	1	1700	2770	0.614	EVE00003	partial genome
+CL0003	chr2	600004	601953	1950	Chuviridae	Chu-like virus C	1	1	3	1	650	3100	0.21	EVE00004	fragmentary
+CL0004	chr2	900004	900801	798	Parvoviridae	Parvo-like virus B	1	1	2	1	266	1300	0.205	EVE00005	fragmentary
+CL0005	chr2	1200004	1200825	822	Mimiviridae	Giant virus G	1	1	2	1	274	950	0.288	EVE00006	fragmentary
+CL0006	chr3	300004	303300	3297	Flaviviridae	Flavi-like virus D	1	1	1	1	599	3400	0.176	EVE00007	fragmentary
+CL0007	scaf4	50001	56400	6400	Totiviridae	Toti-like virus F	2	2	2	2	1500	1500	1.0	EVE00008,EVE00009	near-complete genome
+CL0008	scaf5	64	1740	1677	Parvoviridae	Parvo-like virus B	1	1	2	1	559	1300	0.43	EVE00010	fragmentary

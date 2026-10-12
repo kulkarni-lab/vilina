@@ -1,0 +1,107 @@
+# ===================== Vilina (विलीन) configuration =====================
+sample: my_species
+outdir: results
+
+# ---- inputs -----------------------------------------------------------
+genome: data/genome.fa              # REQUIRED (plain or .gz)
+
+# Viral protein database. Leave viral_faa empty to auto-download NCBI RefSeq viral
+# proteins (+ .gpff for taxonomy). For broader RNA-virus discovery add e.g.
+# metatranscriptome-derived RdRp/virus sets as extra viral_faa entries with a viral_meta TSV
+# (columns: acc, product, organism, family, order, realm, genome_type).
+viral_faa:                          # list or single path; empty = download RefSeq viral
+viral_gpff:                         # RefSeq .gpff(.gz) -> family/genome-type annotation
+viral_meta:                         # optional TSV overriding/adding metadata
+
+# Optional enrichers
+gtf:                                # host annotation: genomic context (CDS/intron/intergenic)
+pep:                                # host proteins: viral homology of annotated genes
+cds:                                # used (translated) only when pep is absent
+cellular_decoy_faa:                 # e.g. UniRef50/Swiss-Prot NON-viral proteins for the
+                                    # reciprocal search that removes cellular-homolog false EVEs
+pirna_clusters_bed:                 # e.g. proTRAC/piPipes clusters -> flags EVEs in piRNA clusters
+
+# ---- compute ----------------------------------------------------------
+diamond: diamond                    # >= 2.1.13 required
+threads: 16
+n_chunks: 16                        # blastx jobs (genome windows are balanced across them)
+window_size: 5000000
+window_overlap: 20000
+diamond_sensitivity: --sensitive    # --more-sensitive / --very-sensitive for old, divergent EVEs
+diamond_extra: ""                   # e.g. "--block-size 6 --index-chunks 1" on big-memory nodes
+
+# ---- hit filters ------------------------------------------------------
+max_evalue: 1.0e-5
+min_bitscore: 40
+min_aln_aa: 30
+exclude_families: [Retroviridae, Metaviridae, Pseudoviridae, Belpaoviridae]   # [] to keep ERVs
+exclude_product_regex: "ankyrin|ubiquitin|histone|BTB|BRCT|heat.?shock|actin|tubulin|cytochrome|serine/threonine|tyrosine.?kinase|transposase|ribonucleotide.?reductase|thymidylate|cyclin|bcl-2"
+
+# ---- locus building ---------------------------------------------------
+chain_max_gap: 3000                 # join collinear HSPs to the same viral protein across this gap
+chain_subject_tolerance: 15         # aa overlap allowed between chained HSPs
+max_locus_overlap: 0.2              # overlap above which a weaker chain becomes an alternative
+cluster_gap: 20000                  # EVEs of one family closer than this form one integration block
+
+# ---- completeness -----------------------------------------------------
+complete_min_cov: 0.90              # + both termini within tolerance -> "complete"
+complete_end_tolerance_aa: 15
+near_complete_min_cov: 0.70
+contig_edge_bp: 500
+min_host_contig: 5000              # shorter contigs carrying EVEs are flagged as possible exogenous virus
+
+# ---- coding competence ------------------------------------------------
+flank_bp: 600                       # ORF search extends this far beyond the EVE
+min_orf_aa: 80
+orf_retention_intact: 0.90          # ORF must re-align over >=90% of the EVE's viral span
+orf_retention_truncated: 0.50
+
+# ======================================================================
+# Comparative module — EVEs as rare genomic changes (RGCs)
+#   python scripts/vilina.py compare --config config.yaml
+# Only needed for the multi-genome phylogenetic analysis; the keys above
+# still drive EVE calling within each genome.
+# ======================================================================
+genomes_dir:                        # directory of genome FASTAs, ONE PER TAXON
+                                    # (file stem = taxon name)
+taxon_order:                        # [sp_a, sp_b, ...] ribbon/plot order; default alphabetical
+taxon_names:                        # {file_stem: "Display name"} optional renaming
+annotations_dir:                    # optional <taxon>.gtf / <taxon>.pep.faa alongside
+compare_outdir:                     # default: <outdir>_compare
+reuse_per_taxon: true               # keep existing per_taxon/<taxon>/eves.tsv
+compare_jobs: 1                     # per-taxon pipelines to run at once
+
+# --- orthology of the insertion SITE (not just of the virus) ----------
+flank_bp_ortho: 3000                # flank pulled either side of each EVE
+min_flank_aln: 500                  # bp of flank that must align in the target genome
+min_flank_identity: 0.75
+max_site_span: 50000                # flanks further apart than this = rearranged, not a site
+empty_site_max: 300                 # flanks this close with no EVE => scored as empty site (0)
+site_overlap_slop: 1000
+allow_single_flank: true            # one-sided anchors can support presence, never absence
+require_reciprocal: true            # a shared call must be recovered from both directions
+same_family_required: true
+
+# --- cross-genome mapping ---------------------------------------------
+flank_mapper: minimap2              # or blastn, for deeper divergence
+minimap2: minimap2
+minimap2_preset: asm20              # asm5 / asm10 / asm20 with increasing divergence
+minimap2_extra: ""                  # e.g. "-I 8G" for very large genomes
+blastn: blastn
+blast_task: dc-megablast
+
+# --- cladogram (Dollo parsimony on the insertion characters) -----------
+build_tree: true
+outgroup:                           # taxon (or list) to root on. Dollo polarity depends on
+                                    # this; default = LAST taxon in taxon_order. Rooting
+                                    # inside a clade that shares insertions forces those to
+                                    # be reconstructed as root gains + losses.
+bootstrap: 100                      # replicates; 0 to skip
+exhaustive_max_trees: 200000        # search all topologies up to this many, else heuristic
+tree_search_restarts: 12            # random addition orders for the heuristic search
+max_optimal_trees: 200              # cap on equally-optimal trees retained for the consensus
+
+# --- comparative plots -------------------------------------------------
+ribbon_scale: proportional          # or normalised (equal track widths)
+dotplot_pairs: all                  # all | adjacent | [[sp_a, sp_b], ...]
+max_dotplot_pairs: 30

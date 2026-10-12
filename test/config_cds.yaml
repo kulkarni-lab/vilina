@@ -1,0 +1,10 @@
+sample: cdsonly
+genome: test/data/genome.fa
+viral_faa: test/data/viral.faa
+viral_gpff: test/data/viral.gpff
+gtf: test/data/annotation.gtf
+cds: test/data/cds.fa
+outdir: test/results_cds
+diamond: diamond   # >= 2.1.13
+threads: 4
+n_chunks: 3

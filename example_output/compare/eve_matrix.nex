@@ -1,0 +1,32 @@
+#NEXUS
+
+[ Vilina: orthologous EVE insertions as binary characters.
+  1 = insertion present, 0 = orthologous site present and empty,
+  ? = site not determined (flanks absent, or spanning a gap large enough
+      to hide an insertion) -- NOT evidence of absence. ]
+
+BEGIN TAXA;
+  DIMENSIONS NTAX=5;
+  TAXLABELS T1 T2 T3 T4 T5;
+END;
+
+BEGIN CHARACTERS;
+  DIMENSIONS NCHAR=10;
+  FORMAT DATATYPE=STANDARD SYMBOLS="01" MISSING=? GAP=-;
+  CHARLABELS EVEL0001 EVEL0002 EVEL0003 EVEL0004 EVEL0005 EVEL0006 EVEL0007 EVEL0008 EVEL0009 EVEL0010;
+  MATRIX
+    T1  111110100?
+    T2  111100000?
+    T3  110010010?
+    T4  100001001?
+    T5  1000010001
+  ;
+END;
+
+BEGIN PAUP;
+  [ Dollo: an insertion at a given site arises once and is never regained,
+    but may be lost by deletion. ]
+  ctype dollo.up:all;
+  set criterion=parsimony maxtrees=1000 increase=auto;
+  [ hsearch; bootstrap nreps=1000 search=heuristic; ]
+END;

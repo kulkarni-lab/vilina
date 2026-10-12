@@ -1,0 +1,5 @@
+clade	n_taxa	n_insertions	insertions	losses_below	bootstrap
+T1,T2,T3,T4,T5	5	2	EVEL0001,EVEL0006	1	100
+T1,T2,T3,T4	4	0		0	100
+T1,T2,T3	3	2	EVEL0002,EVEL0005	1	96
+T1,T2	2	2	EVEL0003,EVEL0004	0	63

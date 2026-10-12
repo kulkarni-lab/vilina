@@ -1,0 +1,14 @@
+sample: synthetic_test
+genome: test/data/genome.fa
+viral_faa: test/data/viral.faa
+viral_gpff: test/data/viral.gpff
+gtf: test/data/annotation.gtf
+pep: test/data/proteins.faa
+outdir: test/results
+diamond: diamond   # >= 2.1.13
+threads: 4
+n_chunks: 2
+window_size: 1000000
+window_overlap: 20000
+cellular_decoy_faa: test/data/cellular_decoy.faa
+pirna_clusters_bed: test/data/pirna_clusters.bed

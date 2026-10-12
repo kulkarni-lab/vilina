@@ -1,0 +1,11 @@
+locus	family	families_in_group	virus	n_taxa_present	n_taxa_absent	n_taxa_missing	paralogous	unlinked	representative	taxa_present	taxa_absent	members	pattern	st_T1	st_T2	st_T3	st_T4	st_T5	informative
+EVEL0001	Bornaviridae		Borna-like virus A	5	0	0	0	0	T1:chrA:198725-199834	T1,T2,T3,T4,T5		T1:EVE00001,T2:EVE00001,T3:EVE00001,T4:EVE00001,T5:EVE00001	11111	1	1	1	1	1	0
+EVEL0002	Parvoviridae		Parvo-like virus B	3	2	0	0	0	T1:chrA:797296-799095	T1,T2,T3	T4,T5	T1:EVE00003,T2:EVE00003,T3:EVE00002	11100	1	1	1	0	0	1
+EVEL0003	Chuviridae		Chu-like virus C	2	3	0	0	0	T1:chrA:496536-498485	T1,T2	T3,T4,T5	T1:EVE00002,T2:EVE00002	11000	1	1	0	0	0	1
+EVEL0004	Parvoviridae		Parvo-like virus B	2	3	0	0	0	T1:chrA:1395802-1397901	T1,T2	T3,T4,T5	T1:EVE00004,T2:EVE00004	11000	1	1	0	0	0	1
+EVEL0005	Bornaviridae		Borna-like virus A	2	3	0	0	0	T1:chrB:494766-498962	T1,T3	T2,T4,T5	T1:EVE00005,T3:EVE00004	10100	1	0	1	0	0	1
+EVEL0006	Totiviridae		Toti-like virus F	2	3	0	0	0	T4:chrA:1105154-1107253	T4,T5	T1,T2,T3	T4:EVE00002,T5:EVE00003	00011	0	0	0	1	1	1
+EVEL0007	Chuviridae		Chu-like virus C	1	4	0	0	0	T1:chrB:798419-799768	T1	T2,T3,T4,T5	T1:EVE00006	10000	1	0	0	0	0	0
+EVEL0008	Parvoviridae		Parvo-like virus B	1	4	0	0	0	T3:chrB:201419-203518	T3	T1,T2,T4,T5	T3:EVE00003	00100	0	0	1	0	0	0
+EVEL0009	Chuviridae		Chu-like virus C	1	4	0	0	0	T4:chrB:960063-961406	T4	T1,T2,T3,T5	T4:EVE00003	00010	0	0	0	1	0	0
+EVEL0010	Totiviridae		Toti-like virus F	1	0	4	0	1	T5:chrA:1099725-1100135	T5		T5:EVE00002	????1	?	?	?	?	1	0

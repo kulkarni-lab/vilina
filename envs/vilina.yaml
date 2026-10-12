@@ -1,0 +1,18 @@
+name: vilina
+channels:
+  - conda-forge
+  - bioconda
+dependencies:
+  # pinned (not >=3.10): Snakemake 7's `pulp` dependency has no build past Python 3.12, so an
+  # unpinned python here can solve to a version too new for snakemake-minimal<8 to install at all
+  - python=3.11
+  - snakemake-minimal>=7,<8   # driver env only needs this if you run `snakemake` from inside it (see README)
+  - diamond>=2.1.13   # earlier 2.1.x report wrong subject coordinates in frameshift (-F) mode
+  - pandas
+  - numpy
+  - matplotlib
+  - pyyaml
+  - curl
+  - seqkit            # only for the UniRef50 decoy
+  - minimap2>=2.24    # comparative module: locating orthologous insertion sites
+  - blast             # comparative module, optional: flank_mapper=blastn for deep divergence

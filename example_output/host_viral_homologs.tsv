@@ -1,0 +1,2 @@
+host_protein	viral_protein	pident	length	qstart	qend	sstart	send	evalue	bitscore	qlen	slen	host_gene	viral_family	viral_product	virus	viral_protein_cov
+EVEgene1-PA	YP_900001.1	85.7	370	1	370	1	370	2.79e-246	665	370	370	EVEgene1	Bornaviridae	nucleoprotein	Borna-like virus A	1.0

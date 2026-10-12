@@ -1,0 +1,7 @@
+sample: minimal
+genome: test/data/genome.fa
+viral_faa: test/data/viral.faa
+outdir: test/results_min
+diamond: diamond   # >= 2.1.13
+threads: 4
+n_chunks: 1

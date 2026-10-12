@@ -1,0 +1,18 @@
+sample: compare_test
+genome: test/compare_data/genomes/T1.fa
+viral_faa: test/compare_data/viral.faa
+viral_gpff: test/compare_data/viral.gpff
+outdir: test/results_cmp
+diamond: diamond
+threads: 2
+n_chunks: 1
+window_size: 2000000
+window_overlap: 20000
+
+genomes_dir: test/compare_data/genomes
+taxon_order: [T1, T2, T3, T4, T5]
+compare_outdir: test/results_cmp
+minimap2: minimap2
+compare_jobs: 2
+outgroup: T5
+bootstrap: 200

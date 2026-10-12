@@ -1,0 +1,32 @@
+##gff-version 3
+chr1	EVEpipe	viral_sequence	200001	201110	680.0	+	.	ID=EVE00001;Name=EVE00001_Bornaviridae;viral_protein=YP_900001.1;virus=Borna-like virus A;family=Bornaviridae;product=nucleoprotein;identity=85.7;viral_cov=1.0;completeness=complete;coding_status=intact ORF;functional_class=likely functional (annotated host gene)
+chr1	EVEpipe	match_part	200001	201110	680.0	+	.	ID=EVE00001.hsp1;Parent=EVE00001;Target=YP_900001.1 1 370
+chr1	EVEpipe	ORF	200001	201113	.	+	0	ID=EVE00001.orf;Parent=EVE00001;length_aa=370
+chr1	EVEpipe	viral_sequence	203001	204107	580.0	+	.	ID=EVE00002;Name=EVE00002_Bornaviridae;viral_protein=YP_900001.1;virus=Borna-like virus A;family=Bornaviridae;product=nucleoprotein;identity=75.6;viral_cov=0.9973;completeness=complete;coding_status=pseudogenised;functional_class=unlikely coding-functional
+chr1	EVEpipe	match_part	203001	204107	580.0	+	.	ID=EVE00002.hsp1;Parent=EVE00002;Target=YP_900001.1 1 369
+chr1	EVEpipe	ORF	203634	204113	.	+	0	ID=EVE00002.orf;Parent=EVE00002;length_aa=159
+chr1	EVEpipe	viral_sequence	900001	905098	2383.0	+	.	ID=EVE00003;Name=EVE00003_Bornaviridae;viral_protein=YP_900004.1;virus=Borna-like virus A;family=Bornaviridae;product=RNA-dependent RNA polymerase;identity=70.0;viral_cov=1.0;completeness=complete;coding_status=pseudogenised;functional_class=unlikely coding-functional
+chr1	EVEpipe	match_part	900001	905098	2383.0	+	.	ID=EVE00003.hsp1;Parent=EVE00003;Target=YP_900004.1 1 1700
+chr1	EVEpipe	ORF	903605	905101	.	+	0	ID=EVE00003.orf;Parent=EVE00003;length_aa=498
+chr2	EVEpipe	viral_sequence	600004	601953	1125.0	-	.	ID=EVE00004;Name=EVE00004_Chuviridae;viral_protein=YP_900008.1;virus=Chu-like virus C;family=Chuviridae;product=glycoprotein;identity=81.4;viral_cov=1.0;completeness=complete;coding_status=intact ORF;functional_class=potentially functional (intact ORF)
+chr2	EVEpipe	match_part	600004	601953	1125.0	-	.	ID=EVE00004.hsp1;Parent=EVE00004;Target=YP_900008.1 1 650
+chr2	EVEpipe	ORF	600001	601953	.	-	0	ID=EVE00004.orf;Parent=EVE00004;length_aa=650
+chr2	EVEpipe	viral_sequence	900004	900801	468.0	+	.	ID=EVE00005;Name=EVE00005_Parvoviridae;viral_protein=YP_900005.1;virus=Parvo-like virus B;family=Parvoviridae;product=NS1 protein;identity=80.8;viral_cov=0.4433;completeness=partial;coding_status=intact ORF;functional_class=potentially functional (intact ORF)
+chr2	EVEpipe	match_part	900004	900801	468.0	+	.	ID=EVE00005.hsp1;Parent=EVE00005;Target=YP_900005.1 202 467
+chr2	EVEpipe	ORF	900001	900813	.	+	0	ID=EVE00005.orf;Parent=EVE00005;length_aa=270
+chr2	EVEpipe	viral_sequence	1200004	1200825	473.0	-	.	ID=EVE00006;Name=EVE00006_Mimiviridae;viral_protein=YP_900016.1;virus=Giant virus G;family=Mimiviridae;product=major capsid protein;identity=82.1;viral_cov=0.4982;completeness=partial;coding_status=truncated ORF;functional_class=possibly functional (truncated ORF)
+chr2	EVEpipe	match_part	1200004	1200825	473.0	-	.	ID=EVE00006.hsp1;Parent=EVE00006;Target=YP_900016.1 102 375
+chr2	EVEpipe	ORF	1200217	1200828	.	-	0	ID=EVE00006.orf;Parent=EVE00006;length_aa=203
+chr3	EVEpipe	viral_sequence	300004	303300	899.0	+	.	ID=EVE00007;Name=EVE00007_Flaviviridae;viral_protein=YP_900010.1;virus=Flavi-like virus D;family=Flaviviridae;product=polyprotein;identity=73.25;viral_cov=0.1759;completeness=partial;coding_status=truncated ORF;functional_class=possibly functional (truncated ORF)
+chr3	EVEpipe	match_part	300004	300900	431.0	+	.	ID=EVE00007.hsp1;Parent=EVE00007;Target=YP_900010.1 1002 1300
+chr3	EVEpipe	match_part	302404	303300	468.0	+	.	ID=EVE00007.hsp2;Parent=EVE00007;Target=YP_900010.1 1302 1600
+chr3	EVEpipe	ORF	302221	303303	.	+	0	ID=EVE00007.orf;Parent=EVE00007;length_aa=360
+scaf4	EVEpipe	viral_sequence	50001	52100	1278.0	+	.	ID=EVE00008;Name=EVE00008_Totiviridae;viral_protein=YP_900013.1;virus=Toti-like virus F;family=Totiviridae;product=capsid protein;identity=87.0;viral_cov=1.0;completeness=complete;coding_status=intact ORF;functional_class=potentially functional (intact ORF)
+scaf4	EVEpipe	match_part	50001	52100	1278.0	+	.	ID=EVE00008.hsp1;Parent=EVE00008;Target=YP_900013.1 1 700
+scaf4	EVEpipe	ORF	50001	52103	.	+	0	ID=EVE00008.orf;Parent=EVE00008;length_aa=700
+scaf4	EVEpipe	viral_sequence	54001	56400	1462.0	+	.	ID=EVE00009;Name=EVE00009_Totiviridae;viral_protein=YP_900014.1;virus=Toti-like virus F;family=Totiviridae;product=RNA-dependent RNA polymerase;identity=85.5;viral_cov=1.0;completeness=complete;coding_status=truncated ORF;functional_class=possibly functional (truncated ORF)
+scaf4	EVEpipe	match_part	54001	56400	1462.0	+	.	ID=EVE00009.hsp1;Parent=EVE00009;Target=YP_900014.1 1 800
+scaf4	EVEpipe	ORF	54409	56403	.	+	0	ID=EVE00009.orf;Parent=EVE00009;length_aa=664
+scaf5	EVEpipe	viral_sequence	64	1740	916.0	-	.	ID=EVE00010;Name=EVE00010_Parvoviridae;viral_protein=YP_900006.1;virus=Parvo-like virus B;family=Parvoviridae;product=capsid protein VP1;identity=78.9;viral_cov=0.7986;completeness=near-complete;coding_status=intact ORF;functional_class=potentially functional (intact ORF)
+scaf5	EVEpipe	match_part	64	1740	916.0	-	.	ID=EVE00010.hsp1;Parent=EVE00010;Target=YP_900006.1 142 700
+scaf5	EVEpipe	ORF	61	1743	.	-	0	ID=EVE00010.orf;Parent=EVE00010;length_aa=560
